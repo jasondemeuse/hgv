@@ -15,7 +15,7 @@ In order to use HGV effectively, you'll need to have a few tools installed on yo
 8. **Recommendation:** This Vagrant box uses a 64 bit operating system (because HHVM requires a 64 bit OS), so we highly recommend that it only be run on 64 bit machines running 64 bit operating systems. (Most, if not all desktops and laptops sold in the last few years are running on 64 bit processors. Some may not be running 64 bit operating systems, however. Please check your system's documentation.)
 
 ## Installation ##
-1. `git clone --recursive https://github.com/wpengine/hgv.git` to clone the latest version of the tool.
+1. `git clone --recursive https://github.com/jasondemeuse/hgv.git` to clone the latest version of the tool.
 2. Change into the directory `hgv`.
 3. Run `npm install` to install build and deploy script dependencies.
 4. Run `vagrant up`.
