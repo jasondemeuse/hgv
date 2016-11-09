@@ -19,22 +19,8 @@ In order to use HGV effectively, you'll need to have a few tools installed on yo
 2. Change into the directory `hgv`.
 3. Run `npm install` to install build and deploy script dependencies.
 4. Run `vagrant up`.
+5. If errors are encountered after the VM is created but before hgv finishes installation, run `vagrant provision` to continue
 
-## How to update when a new version is released ##
-
-Two options to decide, do you delete your existing vagrant and any WP database work or b) do you run the setup scripts to update your existing vagrant environment?
-
-A) To delete your existing HGV vagrant work and re-create from scratch
-
-1. Change into the directory `hgv`.
-2. Run `vagrant destroy`.
-3. Run `vagrant up`.
-
-B) To run the script that will update your existing vagrant
-
-1. Change into the directory `hgv`.
-2. Run `vagrant reload`.
-3. Run `vagrant provision`.
 
 ## What you get ##
 ### Software stack ###
