@@ -1,30 +1,4 @@
-# Mercury Vagrant (HGV) #
-
-This project is meant to allow people in the WordPress community to run a single Vagrant for developing, debugging, and deploying HHVM based code. We have also added standard PHP to test against so that this project is useful for more standard development as well.
-
-The project is also intended as a tool for allowing WP Engine users to test their code prior to actual deployment on WP Engine "Mercury" infrastructure. This is not intended as an exact replica of WP Engine's infrastructure, but is instead a "simulator" of the conditions and software stack on WPE's Mercury platform, allowing you to develop and test your code with an end goal of stability and compatibility with Mercury.
-
-Mercury differs from standard WordPress hosting in several ways, chief among which is the use of HHVM to serve all PHP code. To quote [HHVM's Website](http://hhvm.com):
-
-> HHVM is an open-source virtual machine designed for executing programs written in Hack and PHP. HHVM uses a just-in-time (JIT) compilation approach to achieve superior performance while maintaining the development flexibility that PHP provides.
-
-We have some great [getting started videos and guides here](http://wpengine.com/mercury/how-to-start/) if you want a more guided experience.
-
-## About ##
-
-Mercury Vagrant is a WP Engine creation in partnership with community members.
-
-**Version:** 1.5.1
-
-**Latest Stable:** 1.5.1
-
-**Web:** [http://wpengine.com/mercury](http://wpengine.com/mercury)
-
-**Project Lead:** Jason Cohen
-
-**Contributors:** Mark Kelnar, Doug Stewart, Zach Brown, RC Johnson, Jason Cohen, Kailey Lampert, Cameron Benedict, Grant Landram, Ryan Oeltjenbruns, Lowell Vaughn, Rachel Baker, Eric Mann, Stephen Lin
-
-**Thanks:** To the [VVV](http://varyingvagrantvagrants.org/) team and others who have worked on the open source we've included.
+This is a forked repo of the Mercury environment as it is no longer supported by WPEngine.
 
 ## Prerequisites ##
 In order to use HGV effectively, you'll need to have a few tools installed on your computer. You should:
@@ -38,7 +12,7 @@ In order to use HGV effectively, you'll need to have a few tools installed on yo
  * Short version: `vagrant plugin install vagrant-ghost`
 6. **Suggestion:** Development workstation/laptop should have at least 8GB of RAM. hgv needs to allocate 1GB of RAM in order to run. (Users with <=4GB of RAM [e.g. base-model MacBook Airs] have seen overall system slowness while running this Vagrant box and much of anything else.)
 7. Windows users should be certain that their BIOS' virtualization settings are enabled. (Intel owners should enable VT-x while AMD owners should enable AMD-v. See [here](http://www.sysprobs.com/disable-enable-virtualization-technology-bios) for a better explanation.)
-8. **Recommendation:** This Vagrant box uses a 64 bit operating system (because HHVM requires a 64 bit OS), so we highly recommend that it only be run on 64 bit machines running 64 bit operating systems. (Most, if not all desktops and laptops sold in the last few years are running on 64 bit processors. Some may not be running 64 bit operating systems, however. Please check your system's documentation.) 
+8. **Recommendation:** This Vagrant box uses a 64 bit operating system (because HHVM requires a 64 bit OS), so we highly recommend that it only be run on 64 bit machines running 64 bit operating systems. (Most, if not all desktops and laptops sold in the last few years are running on 64 bit processors. Some may not be running 64 bit operating systems, however. Please check your system's documentation.)
 
 ## Installation ##
 1. `git clone --recursive https://github.com/wpengine/hgv.git` to clone the latest version of the tool.
@@ -178,44 +152,3 @@ The following useful developer tools are installed by default:
 * [Xdebug](http://xdebug.org)
 * [XHProf](http://php.net/xhprof)
 * [PHPUnit](https://phpunit.de)
-
-### Xdebug ###
-
-PHP's [Xdebug extension](http://xdebug.org) is installed by default for the site based on PHP-FPM.  See the [dashboard](http://hgv.test/) for details about the features that are enabled by default for each WordPress.
-
-Xdebug browser extensions to toggle Xdebug on/off without having to ssh into the virtual machine:
-* [Safari - Xdebug Toggler] (https://github.com/benmatselby/xdebug-toggler)
-* [FireFox - Easiest Xdebug] (https://addons.mozilla.org/en-US/firefox/addon/the-easiest-xdebug/)
-* [Chrome - Xdebug Helper] (https://chrome.google.com/webstore/detail/xdebug-helper/eadndfjplgieldjbigjakmdgkmoaaa)
-
-### XHProf ###
-HGV includes an advanced PHP/HHVM profiling tool, [http://php.net/xhprof](http://php.net/xhprof) and a GUI for viewing results. You can view results for your HGV instance at [xhprof.hgv.test](http://xhprof.hgv.test).  See the [dashboard](http://hgv.test/) for details about how easy it is to turn on profiling by adding one parameter to your page request in the browser.
-
-### Database ###
-phpMyAdmin is available at [admin.hgv.test/phpmyadmin/](http://admin.hgv.test/phpmyadmin/). The username is `root` and the password is blank.
-
-### Object Cache/Memcached ###
-
-phpMemcachedAdmin is available at [admin.hgv.test/phpmemcachedadmin/](http://admin.hgv.test/phpmemcachedadmin/). You may use this tool to check on the status of the WordPress object [cache](http://codex.wordpress.org/Class_Reference/WP_Object_Cache).
-
-### Log Viewing ###
-PML is available at [admin.hgv.test/logs](http://admin.hgv.test/logs). You may use this tool to quickly view the most recent web server access and error logs for the various sites automatically created by HGV.
-
-## More Documentation/Information ##
-
-### Documentation layout ###
-
-README.md - This README markdown file, the technical steps of how to get up and running.  But not all the technical details or configuration options specific to the HGV environment.
-
-[wiki](https://github.com/wpengine/hgv/wiki) - Frequently asked questions
-
-[website](http://wpengine.com/mercury) - General introduction for the Mercury project along with video walkthroughs about how to setup HGV for the first time.
-
-[blog](http://wpengine.com/blog) - WP Engine blogs when significant releases or updates are made to HGV.
-
-[updates](http://wpengine.com/mercury/updates) - Another place where the WP Engine team will go into detail about releases or updates to HGV.
-
-[dashboard](http://hgv.test) - The local HGV dashboard which is available when your vagrant is up and running. This contains all the technical details and configuration options specific to the HGV environment.
-
-For detailed how to install guides per OS and other debugging information please see the [wiki here on github](https://github.com/wpengine/hgv/wiki).
-
