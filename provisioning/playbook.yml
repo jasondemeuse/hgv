@@ -1,7 +1,7 @@
 ---
 - hosts: all
   connection: local
-  sudo: yes
+  become: yes
 
   roles:
     - common
@@ -14,4 +14,3 @@
     - varnish
     - admin
     - xhprof
-
